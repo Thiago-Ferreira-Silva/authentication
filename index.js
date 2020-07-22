@@ -1,14 +1,15 @@
-const express = require('express')
-const bodyparser = require('body-parser')
+const app = require('express')()
 const consign = require('consign')
+const db = require('./config/db.js')
 const port = 8081
 
-const app = express()
-
-app.use(bodyparser.urlencoded({ extended: true }))
+app.db = db
 
 consign()
-        .include()
+        .then('./config/middlewares.js')
+        .then('./api')
+        .then('./config/routes.js')
+        .into(app)
 
 app.listen(port, () => {
     console.log(`Running on port ${port}`)

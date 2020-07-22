@@ -1,0 +1,5 @@
+module.exports = {
+        databese: 'database',
+        user: 'user',
+        password: 'password'
+    }
