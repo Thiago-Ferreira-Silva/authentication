@@ -1,7 +1,3 @@
-# Authentication
+# CRUD with authentication
 
-## To create the database:
-Using postgres, run "CREATE DATABASE { NAME };"
-And to use it, run "\c { NAME };"
-
-knex migrate:make create_table_users
+That's an example of a CRUD application with a JSON web token (JWT) authentication
