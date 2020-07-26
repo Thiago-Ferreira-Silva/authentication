@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt')
-const passport = require('passport')
 
 module.exports = app => {
     const encryptPassword = password => {
