@@ -49,7 +49,5 @@ module.exports = app => {
                 .catch(err => res.status(500).send(err))
     }
 
-    // faça a autenticação
-
     return { save, get, getById, remove }
 }
