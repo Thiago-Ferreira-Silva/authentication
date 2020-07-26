@@ -1,7 +1,16 @@
+const bcrypt = require('bcrypt')
+const passport = require('passport')
+
 module.exports = app => {
+    const encryptPassword = password => {
+        const salt = bcrypt.genSaltSync(10)
+        return bcrypt.hashSync(password, salt)
+    }
+
     const save = (req, res) => {
         const user = { ...req.body }
         user.id = req.params.id
+        user.password = encryptPassword(req.body.password)
 
         if(!user.id) {
             app.db('users')
