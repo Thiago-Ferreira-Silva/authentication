@@ -1,5 +1,9 @@
 module.exports = {
-        databese: 'database',
+    authSecret: 'authSecret',
+    db: {
+        database: 'database',
         user: 'user',
         password: 'password'
     }
+    }
+
